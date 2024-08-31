@@ -1,6 +1,7 @@
 import { Grid, GridItem } from "@chakra-ui/react";
 import { SidebarLeft } from "../../features/home/component/sidebar-left";
 import { HomeBase } from "../../features/home/component/home-base";
+import { SidebarRight } from "../../features/home/component/sidebar-right";
 
 export default function HomeRoute() {
   return (
@@ -19,11 +20,11 @@ export default function HomeRoute() {
       <GridItem colSpan={1} rowSpan={2} area={"sidebar-left"}>
         <SidebarLeft />
       </GridItem>
-      <GridItem colSpan={2} rowSpan={2} bg="papayawhip" area={"main"}>
+      <GridItem colSpan={2} rowSpan={2} area={"main"}>
         <HomeBase />
       </GridItem>
-      <GridItem colSpan={1} rowSpan={2} bg="tomato" area={"sidebar-right"}>
-        sidebar-right
+      <GridItem colSpan={1} rowSpan={2} area={"sidebar-right"}>
+        <SidebarRight />
       </GridItem>
     </Grid>
   );
