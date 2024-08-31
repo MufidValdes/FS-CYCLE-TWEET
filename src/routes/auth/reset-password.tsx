@@ -1,17 +1,26 @@
-import { Button, Container, Image, Text } from "@chakra-ui/react";
+import { Button, Container, Image, Stack, Text } from "@chakra-ui/react";
 import { ResetPasswordForm } from "../../features/auth/component/reset-password-form";
 
 export default function ResetPasswordRoute() {
   return (
-    <div>
-      <Container>
-        <Image src="/src/assets/logo.png" alt="logo" />
-        <Text fontFamily={"sans-serif"} fontSize={"3xl"} as={"b"}>
-          Reset password
-        </Text>
-        <ResetPasswordForm />
-        <Button>Create New Password</Button>
+    <>
+      <Container
+        maxW="container.base"
+        mt={"8rem"}
+        textColor={"tweet.putih"}
+        className="
+    font-['Plus_Jakarta_Sans']
+    "
+      >
+        <Stack gap="16px">
+          <Image src="/src/assets/logo.png" alt="logo" w={"108px"} />
+          <Text fontSize={"3xl"}>Reset password</Text>
+          <ResetPasswordForm />
+          <Button bgColor={"tweet.green"} textColor={"tweet.putih"}>
+            Create New Password
+          </Button>
+        </Stack>
       </Container>
-    </div>
+    </>
   );
 }

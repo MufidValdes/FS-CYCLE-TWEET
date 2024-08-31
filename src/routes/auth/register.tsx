@@ -1,22 +1,39 @@
-import { Button, Container, Flex, Image, Link, Text } from "@chakra-ui/react";
+import {
+  Button,
+  Container,
+  Flex,
+  Image,
+  Link,
+  Stack,
+  Text,
+} from "@chakra-ui/react";
 import { RegisterForm } from "../../features/auth/component/register-form";
 
 export default function RegisterRoute() {
   return (
-    <div>
-      <Container>
-        <Image src="/src/assets/logo.png" alt="logo" />
-        <Text fontFamily={"sans-serif"} fontSize={"3xl"} as={"b"}>
-          Create account Circle
-        </Text>
+    <>
+      <Container
+        maxW="container.base"
+        mt={"8rem"}
+        textColor={"tweet.putih"}
+        className="
+        font-['Plus_Jakarta_Sans']
+        "
+      >
+        <Stack gap="16px">
+          <Image src="/src/assets/logo.png" alt="logo" w={"108px"} />
+          <Text fontSize={"3xl"}>Create account Circle</Text>
 
-        <RegisterForm />
-        <Button>Create</Button>
-        <Flex>
-          <Text>Already have account?</Text>
-          <Link color={"#04A51E"}>Login</Link>
-        </Flex>
+          <RegisterForm />
+          <Button bgColor={"tweet.green"} textColor={"tweet.putih"}>
+            Create
+          </Button>
+          <Flex gap={"4px"}>
+            <Text>Already have account?</Text>
+            <Link color={"tweet.green"}>Login</Link>
+          </Flex>
+        </Stack>
       </Container>
-    </div>
+    </>
   );
 }
