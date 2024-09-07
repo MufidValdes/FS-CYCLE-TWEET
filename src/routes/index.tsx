@@ -14,11 +14,11 @@ export function AppRouter() {
       element: <HomeRoute />,
     },
     {
-      path: "/",
+      path: "/profile",
       element: <ProfilePageRoute />,
     },
     {
-      path: "/",
+      path: "/detail",
       element: <DetailPageRoute />,
     },
     {
