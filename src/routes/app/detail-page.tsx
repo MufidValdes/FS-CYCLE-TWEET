@@ -1,7 +1,7 @@
 import { Grid, GridItem } from "@chakra-ui/react";
 import { SidebarRight } from "../../features/home/component/sidebar-right";
 import DetailStatus from "../../features/detail-page/component/detail-status";
-import SidebarWithHeader from "../../features/home/component/Left-sidebar";
+import SidebarLeft from "../../features/home/component/Left-sidebar";
 
 export default function DetailPageRoute() {
   return (
@@ -18,7 +18,7 @@ export default function DetailPageRoute() {
       fontWeight="bold"
     >
       <GridItem colSpan={1} rowSpan={2} area={"sidebar-left"}>
-        <SidebarWithHeader />
+        <SidebarLeft />
       </GridItem>
       <GridItem colSpan={3} rowSpan={2} area={"main"}>
         <DetailStatus />

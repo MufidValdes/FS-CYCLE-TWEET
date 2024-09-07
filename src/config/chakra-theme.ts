@@ -8,6 +8,7 @@ export const theme = extendTheme({
         bg: "#1D1D1D",
         post: "#005E0E",
         gray: "#909090",
+        profiles: "#262626"
       },
     },
     sizes: {
