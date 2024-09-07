@@ -1,4 +1,5 @@
 import { Box, Text } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 import ItemPost from "../../app/component/item-post";
 import FormStatus from "../../app/component/form-status";
 
