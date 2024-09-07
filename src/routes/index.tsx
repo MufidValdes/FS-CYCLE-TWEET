@@ -6,6 +6,7 @@ import ResetPasswordRoute from "./auth/reset-password";
 import ForgetPasswordRoute from "./auth/forget-password";
 import ProfilePageRoute from "./app/profile-page";
 import DetailPageRoute from "./app/detail-page";
+import SearchPageRoute from "./app/search";
 
 export function AppRouter() {
   const router = createBrowserRouter([
@@ -20,6 +21,10 @@ export function AppRouter() {
     {
       path: "/detail",
       element: <DetailPageRoute />,
+    },
+    {
+      path: "/search",
+      element: <SearchPageRoute />,
     },
     {
       path: "/login",
