@@ -1,32 +1,22 @@
-import { Flex, Grid, GridItem } from "@chakra-ui/react";
-import SidebarLeft from "../../features/home/component/Left-sidebar";
 import { SidebarRight } from "../../features/home/component/sidebar-right";
 import SearchBar from "../../features/search-page/search-bar";
 import PageSearch from "../../features/search-page/search-page";
+import { MainLayout } from "../../features/app/layout/app-layout";
 
 export default function SearchPageRoute() {
   return (
-    <Grid
-      p="20px"
-      gridTemplateColumns={"repeat(6, 1fr)"}
-      templateAreas={`
-    "sidebar-left main main sidebar-right"
-    "sidebar-left main main sidebar-right"`}
-      templateRows="repeat(2, 1fr)"
-      gap="2"
-    >
-      <GridItem colSpan={1} rowSpan={2} area={"sidebar-left"}>
-        <SidebarLeft />
-      </GridItem>
-      <GridItem colSpan={3} rowSpan={2} area={"main"}>
-        <Flex h="full" justifyContent="center" flexDir="column">
+    <MainLayout
+      mainContent={
+        <>
           <SearchBar />
           <PageSearch />
-        </Flex>
-      </GridItem>
-      <GridItem colSpan={2} rowSpan={2} area={"sidebar-right"}>
-        <SidebarRight />
-      </GridItem>
-    </Grid>
+        </>
+      }
+      rightContent={
+        <>
+          <SidebarRight />
+        </>
+      }
+    />
   );
 }

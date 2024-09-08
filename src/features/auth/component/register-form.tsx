@@ -1,29 +1,35 @@
-import {
-  Button,
-  FormControl,
-  Input,
-  InputGroup,
-  InputRightElement,
-  Stack,
-} from "@chakra-ui/react";
-import React from "react";
+// RegisterForm.tsx
+import { useState } from "react";
+import { Button, FormControl, Input, Stack } from "@chakra-ui/react";
+import { isEmailValid } from "../utils/validation";
 
 export function RegisterForm() {
-  const [show, setShow] = React.useState(false);
-  const handleClick = () => setShow(!show);
+  const [email, setEmail] = useState("");
+
+  const handleSubmit = () => {
+    if (!isEmailValid(email)) {
+      alert("Invalid email!");
+    }
+  };
+
   return (
     <FormControl isRequired>
-      <Stack spacing={"12px"}>
-        <Input type="text" placeholder="FullName" />
-        <Input type="email" placeholder="Email/Username*" />
-        <InputGroup>
-          <Input type={show ? "text" : "password"} placeholder="password*" />
-          <InputRightElement width="4.5rem">
-            <Button h="1.75rem" size="sm" onClick={handleClick}>
-              {show ? "Hide" : "Show"}
-            </Button>
-          </InputRightElement>
-        </InputGroup>
+      <Stack spacing="12px">
+        <Input type="text" placeholder="FullName*" />
+        <Input
+          type="email"
+          placeholder="Email/Username*"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <Input type="password" placeholder="password*" />
+        <Button
+          onClick={handleSubmit}
+          bgColor={"tweet.green"}
+          textColor={"tweet.putih"}
+        >
+          Create
+        </Button>
       </Stack>
     </FormControl>
   );

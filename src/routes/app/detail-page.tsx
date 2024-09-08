@@ -1,28 +1,20 @@
-import { Grid, GridItem } from "@chakra-ui/react";
 import { SidebarRight } from "../../features/home/component/sidebar-right";
-import SidebarLeft from "../../features/home/component/Left-sidebar";
 import DetailPostPage from "../../features/detail-page/component/detail-post-page";
+import { MainLayout } from "../../features/app/layout/app-layout";
 
 export default function DetailPageRoute() {
   return (
-    <Grid
-      p="20px"
-      gridTemplateColumns={"repeat(6, 1fr)"}
-      templateAreas={`
-    "sidebar-left main main sidebar-right"
-    "sidebar-left main main sidebar-right"`}
-      templateRows="repeat(2, 1fr)"
-      gap="2"
-    >
-      <GridItem colSpan={1} rowSpan={2} area={"sidebar-left"}>
-        <SidebarLeft />
-      </GridItem>
-      <GridItem colSpan={3} rowSpan={2} area={"main"}>
-        <DetailPostPage />
-      </GridItem>
-      <GridItem colSpan={2} rowSpan={2} area={"sidebar-right"}>
-        <SidebarRight />
-      </GridItem>
-    </Grid>
+    <MainLayout
+      mainContent={
+        <>
+          <DetailPostPage />
+        </>
+      }
+      rightContent={
+        <>
+          <SidebarRight />
+        </>
+      }
+    />
   );
 }

@@ -11,6 +11,10 @@ export const theme = extendTheme({
         profiles: "#262626"
       },
     },
+    fonts: {
+      heading: "Plus Jakarta Sans, sans-serif",
+      body: "Plus Jakarta Sans, sans-serif",
+    },
     sizes: {
       max: "max-content",
       min: "min-content",
