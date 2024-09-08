@@ -6,27 +6,27 @@ const suggestedUsers = [
   {
     name: "Mohammed Jawahir",
     handle: "@em.jawahir",
-    avatar: "src/assets/icons/avatar1.png",
+    avatar: "https://bit.ly/dan-abramov",
   },
   {
     name: "Stella Audhina",
     handle: "@stella.audhina",
-    avatar: "src/assets/icons/avatar2.png",
+    avatar: "https://bit.ly/dan-abramov",
   },
   {
     name: "Indah Pra Karya",
     handle: "@indahpra",
-    avatar: "src/assets/icons/avatar3.png",
+    avatar: "https://bit.ly/dan-abramov",
   },
   {
     name: "John Doe",
     handle: "@john.doe",
-    avatar: "src/assets/icons/avatar4.png",
+    avatar: "https://bit.ly/dan-abramov",
   },
   {
     name: "Jane Smith",
     handle: "@jane.smith",
-    avatar: "src/assets/icons/avatar5.png",
+    avatar: "https://bit.ly/dan-abramov",
   },
 ];
 

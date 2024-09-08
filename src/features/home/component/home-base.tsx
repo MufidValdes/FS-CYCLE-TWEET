@@ -102,12 +102,7 @@ const posts = [
 ];
 export function HomeBase() {
   return (
-    <Box
-      borderX="1px"
-      borderColor="#3F3F3F"
-      h="full"
-      className=" text-white py-5 px-5 font-['Plus_Jakarta_Sans']"
-    >
+    <Box h="full" className=" text-white py-5 px-5 font-['Plus_Jakarta_Sans']">
       <Text fontSize="28px">Home</Text>
       <FormStatus
         avatarUrl="https://bit.ly/dan-abramov"

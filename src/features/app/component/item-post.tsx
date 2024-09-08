@@ -6,6 +6,7 @@ interface ItemPostProps {
   avatarUrl: string;
   postTime: string;
   postContent: string;
+  postImage?: string;
   likesCount: number;
   repliesCount: number;
 }
@@ -15,6 +16,7 @@ export default function ItemPost({
   avatarUrl,
   postTime,
   postContent,
+  postImage,
   likesCount,
   repliesCount,
 }: ItemPostProps) {
@@ -45,6 +47,7 @@ export default function ItemPost({
         <Text as="p" fontSize="14px" lineHeight="20px">
           {postContent}
         </Text>
+        <Image src={postImage} width={"400px"} rounded={8} />
         <HStack gap="8px">
           <Flex fontSize="14px" gap="8px" alignItems="center">
             <Image

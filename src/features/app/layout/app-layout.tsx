@@ -20,7 +20,7 @@ export const MainLayout = ({ mainContent, rightContent }: LayoutProps) => (
       <SidebarLeft />
     </GridItem>
     <GridItem colSpan={3} rowSpan={2} area="main">
-      <Flex h="full" justifyContent="center" flexDir="column">
+      <Flex h="full" flexDir="column" borderX="1px" borderColor="#3F3F3F">
         {mainContent}
       </Flex>
     </GridItem>

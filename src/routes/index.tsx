@@ -7,6 +7,7 @@ import ForgetPasswordRoute from "./auth/forget-password";
 import ProfilePageRoute from "./app/profile-page";
 import DetailPageRoute from "./app/detail-page";
 import SearchPageRoute from "./app/search";
+import FollowRoute from "./app/follows";
 
 export function AppRouter() {
   const router = createBrowserRouter([
@@ -25,6 +26,10 @@ export function AppRouter() {
     {
       path: "/search",
       element: <SearchPageRoute />,
+    },
+    {
+      path: "/follows",
+      element: <FollowRoute />,
     },
     {
       path: "/login",
