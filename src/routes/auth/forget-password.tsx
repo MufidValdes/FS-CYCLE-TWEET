@@ -1,5 +1,5 @@
 import { Button, Flex, Link, Text } from "@chakra-ui/react";
-import { ForgetPasswordForm } from "../../features/auth/component/forget-password-form";
+import { ForgetPasswordForm } from "../../features/auth/auth-forget/component/forget-password-form";
 import { AuthLayout } from "../../features/auth/layout/auth-layout";
 
 export default function ForgetPasswordRoute() {

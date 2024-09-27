@@ -1,6 +1,6 @@
 import { Box, Text } from "@chakra-ui/react";
-import ItemPost from "../../app/component/item-post";
-import FormStatus from "../../app/component/form-status";
+import ItemPost from "../../app/component/ItemPost";
+import { StatusForm } from "./threads/status-form";
 
 const posts = [
   {
@@ -104,10 +104,7 @@ export function HomeBase() {
   return (
     <Box h="full" className=" text-white py-5 px-5 font-['Plus_Jakarta_Sans']">
       <Text fontSize="28px">Home</Text>
-      <FormStatus
-        avatarUrl="https://bit.ly/dan-abramov"
-        placeholderText="What is happening?!"
-      />
+      <StatusForm />
       {posts.map((post, index) => (
         <ItemPost
           key={index}

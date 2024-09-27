@@ -6,7 +6,7 @@ const creditData = {
   tagline: "#1 Coding Bootcamp",
 };
 // Credit Component
-export function Credit() {
+export function CreditItem() {
   const { developerName, companyName, tagline } = creditData;
 
   return (

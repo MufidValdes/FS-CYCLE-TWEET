@@ -8,6 +8,7 @@ import {
   Image,
   Button,
   FlexProps,
+  Link,
 } from "@chakra-ui/react";
 import { HiOutlineArrowLeftStartOnRectangle } from "react-icons/hi2";
 import { FaRegUserCircle } from "react-icons/fa";
@@ -96,6 +97,8 @@ const SidebarFooter = () => {
   return (
     <Box ml="4">
       <Button
+        as={Link}
+        href="/login"
         color="tweet.putih"
         variant="link"
         leftIcon={<HiOutlineArrowLeftStartOnRectangle />}

@@ -1,5 +1,5 @@
 import { Flex, Link, Text } from "@chakra-ui/react";
-import { RegisterForm } from "../../features/auth/component/register-form";
+import { RegisterForm } from "../../features/auth/auth-register/component/register-form";
 import { AuthLayout } from "../../features/auth/layout/auth-layout";
 
 export default function RegisterRoute() {

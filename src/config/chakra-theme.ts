@@ -10,6 +10,9 @@ export const theme = extendTheme({
         gray: "#909090",
         profiles: "#262626"
       },
+      error: {
+        primary: "#ff0000",
+      },
     },
     fonts: {
       heading: "Plus Jakarta Sans, sans-serif",

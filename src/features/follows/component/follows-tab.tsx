@@ -1,5 +1,5 @@
-import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
-import ItemFollowing from "../../app/component/item-following";
+import ItemFollowing from "../../app/component/ItemFollowing";
+import TabsLayout from "../../app/component/item-tab";
 
 const followers = [
   {
@@ -84,77 +84,33 @@ const following = [
 ];
 export default function FollowsTabs() {
   return (
-    <Tabs variant="unstyled">
-      <TabList borderBottom="1px solid" borderColor="tweet.gray">
-        <Tab
-          w={"100%"}
-          paddingY={3}
-          textColor={"white"}
-          fontWeight={500}
-          fontSize={"16px"}
-          lineHeight={"20px"}
-          _selected={{
-            position: "relative",
-            _after: {
-              content: '""',
-              position: "absolute",
-              width: "90%",
-              height: "4px",
-              bg: "tweet.green",
-              borderRadius: "full", // Rounded ends for the line
-              bottom: "-1px", // Adjust line placement
-              left: "5%", // Center the line under the text
-            },
-          }}
-        >
-          Followers
-        </Tab>
-        <Tab
-          w={"100%"}
-          paddingY={3}
-          color={"white"}
-          fontWeight={500}
-          fontSize={"16px"}
-          lineHeight={"20px"}
-          _selected={{
-            position: "relative",
-            _after: {
-              content: '""',
-              position: "absolute",
-              width: "90%",
-              height: "4px",
-              bg: "tweet.green",
-              borderRadius: "full", // Rounded ends for the line
-              bottom: "-1px", // Adjust line placement
-              left: "5%", // Center the line under the text
-            },
-          }}
-        >
-          Following
-        </Tab>
-      </TabList>
-      <TabPanels>
-        <TabPanel display={"flex"} flexDirection={"column"} gap={4}>
-          {followers.map((follow, index) => (
+    <TabsLayout
+      title1={"Followers"}
+      title2={"Following"}
+      tabContent1={
+        <>
+          {followers.map((tab, index) => (
             <ItemFollowing
               key={index}
-              name={follow.username}
-              handle={follow.handle}
-              avatar={follow.avatarUrl}
+              name={tab.username}
+              handle={tab.handle}
+              avatar={tab.avatarUrl}
             />
           ))}
-        </TabPanel>
-        <TabPanel display={"flex"} flexDirection={"column"} gap={4}>
-          {following.map((follow, index) => (
+        </>
+      }
+      tabContent2={
+        <>
+          {following.map((tab, index) => (
             <ItemFollowing
               key={index}
-              name={follow.username}
-              handle={follow.handle}
-              avatar={follow.avatarUrl}
+              name={tab.username}
+              handle={tab.handle}
+              avatar={tab.avatarUrl}
             />
           ))}
-        </TabPanel>
-      </TabPanels>
-    </Tabs>
+        </>
+      }
+    />
   );
 }

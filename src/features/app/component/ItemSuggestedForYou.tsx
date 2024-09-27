@@ -1,5 +1,5 @@
 import { Card, Heading } from "@chakra-ui/react";
-import ItemFollowing from "./item-following";
+import ItemFollowing from "./ItemFollowing";
 
 // Data pengguna yang disarankan
 const suggestedUsers = [
@@ -31,7 +31,7 @@ const suggestedUsers = [
 ];
 
 // SuggestedForYou Component
-export function SuggestedForYou() {
+export function ItemSuggestedForYou() {
   return (
     <Card bgColor="tweet.profiles" textColor="tweet.putih" px="24px" py="8px">
       <Heading fontSize="20px" fontWeight="bold" py="8px">
