@@ -1,4 +1,4 @@
-import { UserEntity } from "../../app/utils/auth-dto";
+import { UserEntity } from "../../../types/auth-dto";
 
 export type LoginRequestDTO = Pick<UserEntity, "email" | "password">;
 

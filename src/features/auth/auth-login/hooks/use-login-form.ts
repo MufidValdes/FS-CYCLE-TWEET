@@ -1,9 +1,9 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useAppDispatch } from "../../../app/hooks/use-store";
+import { useAppDispatch } from "../../../../hooks/use-store";
 import { useNavigate } from "react-router-dom";
-import { setAuthData } from "../../../app/store/auth-slice";
-import { login } from "../../../app/store/authAPI";
+import { setAuthData } from "../../../../store/auth-slice";
+import { login } from "../../../../api/authAPI";
 import axios from "axios";
 import { useToast } from "@chakra-ui/react";
 import { LoginFormInputs, loginSchema } from "../schemas/login-schema";
@@ -23,14 +23,6 @@ function useLoginForm() {
       
       async function onSubmit(data: LoginFormInputs) {
         try {
-      //   const response = await apiV1.post<
-      //   null,
-      //   { data: LoginResponseDTO },
-      //   LoginRequestDTO
-      // >("/auth/login", {
-      //   email: data.email,
-      //   password: data.password,
-      // });
           const { token, user } = await login(data);
           if (token) localStorage.setItem("token", token);
           if (user) {
@@ -42,6 +34,13 @@ function useLoginForm() {
               isClosable: true,
             });
             navigate("/");
+          }else {
+            toast({
+              title: 'Login failed!',
+              status: 'error',
+              duration: 3000,
+              isClosable: true,
+            });
           }
 
         } catch (error) {

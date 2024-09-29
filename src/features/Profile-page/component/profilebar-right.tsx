@@ -1,6 +1,6 @@
 import { Stack } from "@chakra-ui/react";
-import { ItemSuggestedForYou } from "../../app/component/ItemSuggestedForYou";
-import { CreditItem } from "../../app/component/CreditItem";
+import { ItemSuggestedForYou } from "../../../component/ui/ItemSuggestedForYou";
+import { CreditItem } from "../../../component/ui/CreditItem";
 
 // SidebarRight Component
 export function ProfileBarRight() {

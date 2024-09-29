@@ -1,4 +1,4 @@
-import { MainLayout } from "../../features/app/layout/app-layout";
+import { MainLayout } from "../../component/layout/app-layout";
 import { HomeBase } from "../../features/home/component/home-base";
 import { SidebarRight } from "../../features/home/component/sidebar-right";
 

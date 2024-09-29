@@ -1,10 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
 import authReducer from './auth-slice';
 import threadReducer from './thread-slice'
+import likeReducer from './like-slice'
+import followerReducer from './follower-slice'
 export const store = configureStore({
   reducer: {
     auth: authReducer,
-    threads: threadReducer,
+    thread: threadReducer,
+    like: likeReducer,
+    follower: followerReducer,
   },
   
 });

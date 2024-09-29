@@ -1,12 +1,12 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useAppDispatch } from "../../../app/hooks/use-store";
+import { useAppDispatch } from "../../../../hooks/use-store";
 import { useNavigate } from "react-router-dom";
-import { setAuthData } from "../../../app/store/auth-slice";
+import { setAuthData } from "../../../../store/auth-slice";
 import axios from "axios";
 import { useToast } from "@chakra-ui/react";
 import { RegisterFormInputs, registerSchema } from "../schemas/register-schema";
-import { registerData } from "../../../app/store/authAPI";
+import { registerData } from "../../../../api/authAPI";
 
 function useRegisterForm() {
     const {
@@ -23,8 +23,7 @@ function useRegisterForm() {
       
       async function onSubmit(data: RegisterFormInputs) {
         try {
-          const { token, user } = await registerData(data);
-          if (token) localStorage.setItem("token", token);
+          const user = await registerData(data);
           if (user) {
             dispatch(setAuthData(user));
             toast({
@@ -34,6 +33,13 @@ function useRegisterForm() {
               isClosable: true,
             });
             navigate("/login");
+          }else {
+            toast({
+              title: 'Login failed!',
+              status: 'error',
+              duration: 3000,
+              isClosable: true,
+            });
           }
 
         } catch (error) {

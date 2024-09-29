@@ -1,5 +1,5 @@
-import ItemFollowing from "../../app/component/ItemFollowing";
-import TabsLayout from "../../app/component/item-tab";
+import ItemFollowing from "../../../component/ui/ItemFollowing";
+import TabsLayout from "../../../component/ui/item-tab";
 
 const followers = [
   {

@@ -1,5 +1,5 @@
 import { Stack } from "@chakra-ui/react";
-import { RightBarMyProfile } from "../../app/component/RightBarMyProfile";
+import { RightBarMyProfile } from "../../../component/ui/RightBarMyProfile";
 
 // SidebarRight Component
 export function SidebarRight() {

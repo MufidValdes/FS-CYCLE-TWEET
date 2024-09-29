@@ -1,5 +1,5 @@
 import { Flex, Grid, GridItem } from "@chakra-ui/react";
-import SidebarLeft from "../../home/component/Left-sidebar";
+import SidebarLeft from "../../features/home/component/Left-sidebar";
 
 interface LayoutProps {
   mainContent: React.ReactNode;

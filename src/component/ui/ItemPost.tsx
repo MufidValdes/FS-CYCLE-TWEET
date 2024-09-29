@@ -28,7 +28,13 @@ export default function ItemPost({
       borderBottom="1px"
       borderColor="#3F3F3F"
     >
-      <Image borderRadius="full" src={avatarUrl} boxSize="40px" alt="Avatar" />
+      <Image
+        borderRadius="full"
+        src={avatarUrl}
+        boxSize="40px"
+        alt="Avatar"
+        objectFit="cover"
+      />
       <Stack gap="8px">
         <Flex gap="4px" fontSize="14px">
           <Text as="span" fontWeight="bold">

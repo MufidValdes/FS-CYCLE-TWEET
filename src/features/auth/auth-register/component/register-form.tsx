@@ -12,7 +12,7 @@ import useRegisterForm from "../hooks/use-register-form";
 import React from "react";
 
 export function RegisterForm() {
-  const { register, handleSubmit, errors, onSubmit } = useRegisterForm();
+  const { register, handleSubmit, onSubmit, errors } = useRegisterForm();
   const [show, setShow] = React.useState(false);
   const handleClick = () => setShow(!show);
   return (

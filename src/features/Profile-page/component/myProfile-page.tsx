@@ -1,7 +1,7 @@
 import { Box } from "@chakra-ui/react";
-import { RightBarMyProfile } from "../../app/component/RightBarMyProfile";
-import TabsLayout from "../../app/component/item-tab";
-import ItemPost from "../../app/component/ItemPost";
+import { RightBarMyProfile } from "../../../component/ui/RightBarMyProfile";
+import TabsLayout from "../../../component/ui/item-tab";
+import ItemPost from "../../../component/ui/ItemPost";
 
 const profileTab = [
   {

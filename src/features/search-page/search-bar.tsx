@@ -1,3 +1,4 @@
+// src/components/SearchBar.tsx
 import {
   Flex,
   Icon,
@@ -6,8 +7,21 @@ import {
   InputLeftElement,
 } from "@chakra-ui/react";
 import { RiUserSearchLine } from "react-icons/ri";
+import { ChangeEvent, useState } from "react";
 
-export default function SearchBar() {
+interface SearchBarProps {
+  onSearch: (value: string) => void;
+}
+
+export default function SearchBar({ onSearch }: SearchBarProps) {
+  const [value, setValue] = useState("");
+
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const inputValue = e.target.value;
+    setValue(inputValue);
+    onSearch(inputValue);
+  };
+
   return (
     <Flex
       rounded={"full"}
@@ -23,6 +37,8 @@ export default function SearchBar() {
           variant="outline"
           borderColor="tweet.green"
           placeholder="Search your friend"
+          value={value}
+          onChange={handleInputChange}
         />
       </InputGroup>
     </Flex>
