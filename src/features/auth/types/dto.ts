@@ -1,10 +1,13 @@
-import { UserEntity } from "../../../types/auth-dto";
+import { UserEntity } from "../../../app/types/auth-dto";
 
 export type LoginRequestDTO = Pick<UserEntity, "email" | "password">;
 
 export type LoginResponseDTO = {
   user: UserEntity;
-  token: string;
+  tokens: {
+    accessToken: string;
+    refreshToken: string;
+  };
 };
 
 export type RegisterRequestDTO = Pick<

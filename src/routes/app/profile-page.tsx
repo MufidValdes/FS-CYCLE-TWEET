@@ -1,6 +1,6 @@
-import MyProfilePage from "../../features/Profile-page/component/myProfile-page";
-import { ProfileBarRight } from "../../features/Profile-page/component/profilebar-right";
-import { MainLayout } from "../../component/layout/app-layout";
+import MyProfilePage from "../../features/Profile-page/component/Profile-page";
+import { ProfileBarRight } from "../../features/Profile-page/component/profile-bar-right";
+import { MainLayout } from "../../component/layout/app-main-layout";
 
 export default function ProfilePageRoute() {
   return (

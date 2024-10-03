@@ -1,26 +1,22 @@
-import { Box, Spinner, Text } from "@chakra-ui/react";
-import ItemPost from "../../../component/ui/ItemPost";
+import { Alert, Box, Spinner, Text } from "@chakra-ui/react";
+import ItemPost from "../../../component/ui/item-post";
 import { StatusForm } from "./threads/status-form";
-import { getAllThread } from "../../../api/threadAPI";
-import { useQuery } from "@tanstack/react-query";
-import { Thread } from "../types/thread-type";
+import { ThreadEntity } from "../../../app/types/thread-dto";
+import { useThreads } from "../../../app/hooks/use-threads";
 
 export function HomeBase() {
-  const { data, isLoading, error } = useQuery<Thread[]>({
-    queryKey: ["threads"],
-    queryFn: getAllThread,
-    staleTime: 1000 * 60 * 5,
-  });
+  const { data: threads, isLoading, isError } = useThreads();
   if (isLoading) return <Spinner />;
 
-  if (error) return <Text>Error loading threads</Text>;
+  if (isError || !threads)
+    return <Alert status="error">Error loading threads</Alert>;
 
   return (
     <Box h="full" className=" text-white py-5 px-5 font-['Plus_Jakarta_Sans']">
       <Text fontSize="28px">Home</Text>
-      <StatusForm />
+      <StatusForm placeholder={"What is happening?!"} buttonTitle={"post"} />
 
-      {data?.map((thread: Thread) => (
+      {threads?.map((thread: ThreadEntity) => (
         <ItemPost
           key={thread.id}
           username={thread.User.name}

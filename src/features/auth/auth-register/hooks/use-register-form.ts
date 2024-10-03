@@ -1,12 +1,12 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useAppDispatch } from "../../../../hooks/use-store";
+import { useAppDispatch } from "../../../../app/hooks/use-store";
 import { useNavigate } from "react-router-dom";
-import { setAuthData } from "../../../../store/auth-slice";
+import { setAuthData } from "../../../../app/store/store-auth-slice";
 import axios from "axios";
 import { useToast } from "@chakra-ui/react";
 import { RegisterFormInputs, registerSchema } from "../schemas/register-schema";
-import { registerData } from "../../../../api/authAPI";
+import { registerData } from "../../../../api/api-auth";
 
 function useRegisterForm() {
     const {

@@ -1,5 +1,5 @@
 import { Flex, Link, Text } from "@chakra-ui/react";
-import { AuthLayout } from "../../features/auth/layout/auth-layout";
+import { AuthLayout } from "../../component/layout/app-auth-layout";
 import { LoginForm } from "../../features/auth/auth-login/component/login-form";
 
 export default function LoginRoute() {
