@@ -1,6 +1,6 @@
 import { MainLayout } from "../../component/layout/app-main-layout";
 import { HomeBase } from "../../features/home/component/home-base";
-import { SidebarRight } from "../../features/home/component/sidebar-right";
+import { SidebarRight } from "../../component/ui/right-sidebar";
 
 export default function HomeRoute() {
   return (

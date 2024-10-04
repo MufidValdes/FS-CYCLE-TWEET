@@ -1,4 +1,5 @@
 import axios from "axios";
+import { store } from "../app/store/store";
 // https://dev.to/sarathadhithya/optimizing-api-requests-with-axios-interceptors-and-advanced-error-handling-43cb
 
 const API_URL = import.meta.env.VITE_BACKEND_URL;
@@ -12,10 +13,10 @@ export const apiV1 = axios.create({
 
 
 apiV1.interceptors.request.use((config) => {
-    const token = localStorage.getItem('accessToken');
+    const { accessToken } = store.getState().auth;
   
-    if (token) {
-      config.headers.Authorization = `Bearer ${token}`;
+    if (accessToken) {
+      config.headers.Authorization = `Bearer ${accessToken}`;
     } else {
       // Handle the case where there is no token
       // You might want to redirect to the login page or take appropriate action

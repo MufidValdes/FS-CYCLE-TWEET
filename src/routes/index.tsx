@@ -9,8 +9,16 @@ import SearchPageRoute from "./app/search";
 import FollowRoute from "./app/follows";
 import ProtectedRoute from "./_protected-route";
 import HomeRoute from "./app/home";
+import { useEffect } from "react";
+import { useAppDispatch } from "../app/hooks/use-store";
+import { getUserLogged } from "../app/store/store-auth-slice";
 
 export function AppRouter() {
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    dispatch(getUserLogged());
+  }, [dispatch]);
+
   const router = createBrowserRouter([
     {
       path: "/login",
@@ -32,14 +40,6 @@ export function AppRouter() {
       element: <ProtectedRoute />,
       children: [
         {
-          path: "/",
-          element: <HomeRoute />,
-        },
-        {
-          path: "/profile",
-          element: <ProfilePageRoute />,
-        },
-        {
           path: "/detail",
           element: <DetailPageRoute />,
         },
@@ -50,6 +50,14 @@ export function AppRouter() {
         {
           path: "/follows",
           element: <FollowRoute />,
+        },
+        {
+          path: "/",
+          element: <HomeRoute />,
+        },
+        {
+          path: "/profile",
+          element: <ProfilePageRoute />,
         },
       ],
     },

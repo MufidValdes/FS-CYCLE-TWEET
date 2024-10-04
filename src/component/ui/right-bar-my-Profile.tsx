@@ -14,7 +14,7 @@ const profileData = {
   username: "✨ Stella Audhina ✨",
   handle: "audhinafh",
   coverPic: "src/assets/icons/cover-profile.png",
-  profilePic: " ",
+  profilePic: " https://bit.ly/dan-abramov",
   bio: "picked over by the worms, and weird fishes",
   following: 291,
   followers: 23,

@@ -3,8 +3,8 @@ import { useState } from "react";
 
 interface ItemUserProps {
   name: string;
-  handle: string;
-  avatar: string;
+  handle?: string;
+  avatar?: string;
 }
 // Komponen ItemFollowing dengan props
 export default function ItemFollowing({ name, handle, avatar }: ItemUserProps) {

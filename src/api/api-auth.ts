@@ -24,7 +24,7 @@ export const login = (data: LoginRequestDTO): Promise<LoginResponseDTO> => {
   return apiRequest<LoginResponseDTO>({
     method: 'POST',
     url: '/auth/login',
-    data,
+    data, 
   });
 };
 export const registerData = (data: RegisterRequestDTO): Promise<RegisterResponseDTO> => {

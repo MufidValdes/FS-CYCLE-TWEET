@@ -1,13 +1,13 @@
-import { SidebarRight } from "../../features/home/component/sidebar-right";
-import DetailPostPage from "../../features/detail-page/component/detail-post-page";
+import { SidebarRight } from "../../component/ui/right-sidebar";
 import { MainLayout } from "../../component/layout/app-main-layout";
+import PostPage from "../../features/detail/component/detail-post-page";
 
 export default function DetailPageRoute() {
   return (
     <MainLayout
       mainContent={
         <>
-          <DetailPostPage />
+          <PostPage />
         </>
       }
       rightContent={

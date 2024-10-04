@@ -2,33 +2,13 @@ import { Alert, Box, Spinner } from "@chakra-ui/react";
 import { RightBarMyProfile } from "../../../component/ui/right-bar-my-Profile";
 import TabsLayout from "../../../component/ui/item-tab-layout";
 import ItemPost from "../../../component/ui/item-post";
-import { useQuery } from "@tanstack/react-query";
-import { getThreadById } from "../../../api/api-thread";
 import { useParams } from "react-router-dom";
-import { ThreadEntity } from "../../../app/types/thread-dto";
+import { useThreadById } from "../../../app/hooks/use-threads";
 
-// const profileTab = [
-//   {
-//     username: "Indah Pra Karya",
-//     handle: "indahpra",
-//     avatarUrl: "https://bit.ly/dan-abramov",
-//     postTime: "4h",
-//     postContent:
-//       "Kalian pernah ga sih bet on saving? Jadi by calculation sebenernya kita ga survive sampe tanggal tertentu.",
-//     postImage:
-//       "https://cdna.artstation.com/p/assets/images/images/079/767/316/large/-monster02small.jpg?1725778540",
-//     likesCount: 36,
-//     repliesCount: 381,
-//   },
-//
-// ];
 export default function MyProfilePage() {
   // Using useParams to get the dynamic ID from the route
-  const { id } = useParams<{ id: string }>();
-  const { data, isLoading, error } = useQuery<ThreadEntity>({
-    queryKey: ["thread", id],
-    queryFn: () => getThreadById(Number(id)),
-  });
+  const { id } = useParams();
+  const { data, isLoading, error } = useThreadById(Number(id));
   if (isLoading) return <Spinner />;
 
   if (error) return <Alert status="error">Error loading threads</Alert>;

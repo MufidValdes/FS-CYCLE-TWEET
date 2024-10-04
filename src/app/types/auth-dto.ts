@@ -1,3 +1,4 @@
+import { FollowEntity } from "./follow-dto";
 import { LikeEntity, ThreadEntity } from "./thread-dto";
 
 export interface UserEntity {
@@ -14,8 +15,8 @@ export interface UserEntity {
 
     likes: LikeEntity
     Thread: ThreadEntity
-    followers : []
-    following : []
+    followers : FollowEntity[]
+    following : FollowEntity[]
     createdAt    :   Date ;
     updatedAt    :   Date ;
 }

@@ -1,6 +1,6 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { ThreadEntity } from '../types/thread-dto';
-import { createThread, deleteThread, getAllThreads, getThreadById, updateThread } from '../../api/api-thread';
+import { createRepliesThread, createThread, deleteThread, getAllThreads, getThreadById, updateThread } from '../../api/api-thread';
 import { CreateThreadDTO, threadInputs } from '../../features/home/schemas/thread-schemas';
 import { useToast } from '@chakra-ui/react';
 
@@ -40,6 +40,19 @@ export const useCreateThread = () => {
     mutationFn: (data: CreateThreadDTO) => createThread(data),
     onSuccess: () => {
         queryClient.invalidateQueries({queryKey:['threads']}); // Refresh thread list after new thread is created
+        showToast(toast,  "Thread created successfully", "success")
+        
+    },
+  });
+};
+// Create new thread
+export const useCreateRepliesThread = () => {
+  const queryClient = useQueryClient();
+  const toast = useToast()
+  return useMutation({
+    mutationFn:  ({ id, data }: { id: number; data: threadInputs })=> createRepliesThread(id, data),
+    onSuccess: () => {
+        queryClient.invalidateQueries({queryKey:['replies']}); // Refresh thread list after new thread is created
         showToast(toast,  "Thread created successfully", "success")
         
     },

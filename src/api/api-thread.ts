@@ -47,6 +47,26 @@ export const updateThread = async (id: number, data: threadInputs): Promise<Thre
 
 // Get thread by ID
 export const getThreadById = async (id: number): Promise<ThreadEntity> => {
-  const response = await apiV1.get(`/threads/${id}`);
+  const response = await apiV1.get(`/threads/${id}`,
+    {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    }
+  );
   return response.data;
 };
+// Get Replies by ID
+  export const createRepliesThread = async (id: number, data: threadInputs): Promise<ThreadEntity> => {
+    const formData = new FormData();
+    formData.append("content", data.content);
+    if (data.imageUrl instanceof File) {
+      formData.append("imageUrl", data.imageUrl);
+    }
+    const response = await apiV1.post(`/threads/${id}/replies`, formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    });
+    return response.data;
+  };

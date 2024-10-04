@@ -1,5 +1,5 @@
 import { Flex, Grid, GridItem } from "@chakra-ui/react";
-import SidebarLeft from "../../features/home/component/Left-sidebar";
+import SidebarLeft from "../ui/Left-sidebar";
 
 interface LayoutProps {
   mainContent: React.ReactNode;
@@ -9,14 +9,14 @@ interface LayoutProps {
 export const MainLayout = ({ mainContent, rightContent }: LayoutProps) => (
   <Grid
     p="20px"
-    gridTemplateColumns="repeat(6, 1fr)"
+    gridTemplateColumns={{ base: "1fr", md: "repeat(6, 1fr)" }}
     templateAreas={`
       "sidebar-left main main sidebar-right"
       "sidebar-left main main sidebar-right"`}
     templateRows="repeat(2, 1fr)"
     gap="2"
   >
-    <GridItem colSpan={1} rowSpan={2} area="sidebar-left">
+    <GridItem colSpan={{ base: 0, md: 1 }} rowSpan={2} area="sidebar-left">
       <SidebarLeft />
     </GridItem>
     <GridItem colSpan={3} rowSpan={2} area="main">
@@ -24,7 +24,7 @@ export const MainLayout = ({ mainContent, rightContent }: LayoutProps) => (
         {mainContent}
       </Flex>
     </GridItem>
-    <GridItem colSpan={2} rowSpan={2} area="sidebar-right">
+    <GridItem colSpan={{ base: 0, md: 2 }} rowSpan={2} area="sidebar-right">
       {rightContent}
     </GridItem>
   </Grid>
